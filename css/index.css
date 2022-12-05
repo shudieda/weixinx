@@ -1,0 +1,54 @@
+.big-box {
+    display: flex;
+}
+
+.left-box {
+    background: #ededed;
+    width: 1375px;
+    overflow: auto;
+    height: 2000px;
+    border-right: 2px solid #ccc;
+}
+
+.left-box::-webkit-scrollbar {
+    width: 30px;
+}
+
+.left-box::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border: 3px solid transparent;
+    border-radius: 9px;
+}
+
+.left-box .my-table {
+    font-size: 60px;
+}
+
+.send-btn {
+    background: #ededed;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 5px;
+    font-weight: 700;
+    margin-left: 420px;
+    font-size: 45px;
+}
+
+.bbx {
+    width: 2000px;
+    background: rgb(210, 210, 210);
+}
+
+.box {
+    width: 1125px !important;
+    height: 2436px;
+    border-right: 2px solid rgb(210, 210, 210);
+}
+
+.bbb {
+    background: #ededed;
+    height: 1942px;
+    font-size: 60px;
+    width: 1000px;
+}
+
+
