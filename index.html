@@ -1,0 +1,3870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- 公共样式 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      width: 1125px;
+      height: 2000px;
+      flex-direction: column;
+    }
+  </style>
+  <!-- 对话框样式 -->
+  <style>
+    .bh {
+      width: 1125px;
+      height: 264px;
+      border-bottom: 1px solid rgb(212,212,212);
+      background-color: rgb(237,237,237);
+
+    }
+
+    @font-face {
+      font-family: 字体子系 ;
+      src: url("ziti/字体子系.ttf");
+    }
+
+
+    @font-face {
+      font-family: Andale Sans UI ;
+      src: url("ziti/Andale Sans UI.ttf");
+    }
+
+    .huakuaia {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+
+
+    .box {
+      width: 1125px;
+      padding: 10px;
+
+    }
+
+    .huakuaia::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    .huakuaia::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+
+
+
+    .ziji {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+
+    .ziji::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    .ziji::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+
+
+
+
+    .yonghuyi {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+
+    .yonghuyi::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    .yonghuyi::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+
+
+
+    .yonghuer {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+
+    .yonghuer::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    .yonghuer::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+
+
+
+
+    .bbx {
+      background: rgb(237, 237, 237);
+      margin-right: 20px;
+      flex: 1;
+    }
+
+    .sz-ys{
+      margin-right: auto;
+      background-color: rgb(255,255,255);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/A1.png");
+      background-repeat:no-repeat;
+      padding:26px 34px 26px 120px;
+      background-position: top 40px left 45px;
+      font-size: 45px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      font-family: 字体子系;
+    }
+    .yz-ys{
+      margin-right: auto;
+      background-color: rgb(255,255,255);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/A2.png");
+      background-repeat:no-repeat;
+      padding:26px 34px 26px 120px;
+      background-position: top 45px left 45px;
+      font-size: 45px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      font-family: 字体子系;
+    }
+
+    .sy-ys{
+      margin-left: auto;
+      background-color: rgb(149,236,105);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/21.png");
+      background-repeat:no-repeat;
+      background-position: top 0px right 0px;
+      padding:26px 120px 26px 34px;
+      margin-top: 30px;
+      font-size: 45px;
+      border-radius: 10px;
+      font-family: 字体子系;
+    }
+    .yy-ys{
+      margin-left: auto;
+      background-color: rgb(149,236,105);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/20.png");
+      background-repeat:no-repeat;
+      background-position: top 2px right 0px;
+      padding:26px 120px 26px 34px;
+      margin-top: 30px;
+      font-size: 45px;
+      border-radius: 10px;
+      font-family: 字体子系;
+    }
+
+    .yzz-ys{
+      background-image: url("tutu/wx-sc/9.png");
+      width: 79px;
+    }
+
+    /* 公共样式 */
+    .left-text-input, .right-text-input {
+      width: fit-content;
+      max-width: 700px;
+      box-sizing: border-box;
+      color: #333;
+      background: #fff;
+      margin-top: 26px;
+      font-size: 42px;
+      border-radius:10px;
+      font-family: 字体子系;
+    }
+
+    .left-text-input img,
+    .right-text-input img {
+      width: 50px;
+      vertical-align: top;
+    }
+
+    .left-text-input {
+      margin-right: auto;
+      background: #ffffff;
+      margin-left: 13px;
+      padding:26px 34px 26px 34px;
+    }
+
+    .left-zby-input {
+      margin-right: auto;
+      background-color: #ffffff;
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/24.png");
+      background-repeat:no-repeat;
+      padding:28px 34px 28px 90px;
+      background-position: top 35px left 45px;
+      font-size: 40px;
+      border-radius: 10px;
+      margin-top: 24px;
+      font-family: 字体子系;
+    }
+
+    .left-ysys-input {
+      margin-right: auto;
+      background-color: #ffffff;
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/24.png");
+      background-repeat:no-repeat;
+      padding:28px 34px 28px 90px;
+      background-position: top 35px left 45px;
+      font-size: 40px;
+      border-radius: 10px;
+      margin-top: 24px;
+      border: none;
+      font-family: 字体子系;
+    }
+
+    .right-text-input {
+      margin-left: auto;
+      background-color: rgb(149,236,105);
+      margin-right: 13px;
+      padding:26px 34px 26px 34px;
+
+    }
+
+    .right-sj-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding:25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(135,135,135);
+      font-family: 字体子系;
+    }
+
+    .right-qt-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding:25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(165,165,165);
+      font-family: 字体子系;
+    }
+
+    .right-pyp-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding:25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(107,107,107);
+      font-family: 字体子系;
+    }
+
+    .right-hlx-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding:25px 20px 20px 55px;
+      text-align: center;
+      background-image: url("tutu/wx-sc/26.png");
+      background-repeat:no-repeat;
+      font-size: 35px;
+      background-position: top 22px left;
+      color: rgb(165,165,165);
+    }
+
+    .right-ysy-input {
+      margin-left: auto;
+      background-color: rgb(149,236,105);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/23.png");
+      background-repeat:no-repeat;
+      background-position: top 28px right 45px;
+      padding:23px 90px 20px 44px;
+      margin-top: 30px;
+      font-size: 40px;
+      border-radius: 10px;
+      font-family: 字体子系;
+    }
+
+    .dialog-item {
+      display: flex;
+    }
+
+    .left-head-img, .right-head-img,.right-yz-img,.left-head-imga,.left-head-imgb,.left-head-imgc,.left-head-imgd,.left-head-imge,.left-head-imgf,.left-head-imgg {
+      width: 108px;
+      height: 108px;
+      border-radius: 10%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 26px;
+
+    }
+
+    .left-head-img {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+
+    .left-head-imga {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imgb {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imgc {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imgd {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imge {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imgf {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+    .left-head-imgg {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+
+    .right-head-img {
+      margin-left: 16px;
+      margin-right: 22px;
+    }
+
+    .right-yz-img {
+      float: right;
+      margin-right: 22px;
+    }
+
+    /* 公共样式 */
+    .left-custom-emoji,
+    .right-custom-emoji {
+      max-width: 800px !important;
+      max-height: 800px !important;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .left-custom-emoji {
+      margin-right: auto;
+      margin-left: 11px;
+    }
+
+    .right-custom-emoji {
+      margin-left: auto;
+    }
+
+    @font-face {
+      font-family:FZLTZHUNHJW ;
+      src: url("ziti/FZLTZHUNHJW.ttf");
+    }
+
+    @font-face {
+      font-family: WeChat Sans SS Medium;
+      src: url("ziti/WeChat Sans SS Medium.ttf");
+    }
+
+  </style>
+  <!-- 测试面板样式 -->
+  <style>
+    .function-box {
+      width: 1463px;
+      height: 2436px;
+      position: relative;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      background-color: #FFFFFF;
+    }
+
+    .function-box::-webkit-scrollbar {
+      width: 40px;
+    }
+
+    .function-box::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+    .function-item {
+      font-size: 25px;
+      /*margin: 20px 0;*/
+      user-select: none;
+      overflow-y: auto;
+    }
+
+    .function-item::-webkit-scrollbar {
+      width: 30px;
+    }
+
+    .function-item::-webkit-scrollbar-thumb {
+      background-color: #ababab;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      background-clip: content-box;
+    }
+
+
+
+    .function-item label {
+      display: block;
+      margin-top: 10px;
+    }
+
+
+
+    .emoji-box {
+      border: 1px solid black;
+      user-select: none;
+      overflow-y: auto;
+      height: 360px;
+    }
+
+    label {
+      user-select: none;
+    }
+
+    .sc {
+      opacity: 0;
+    }
+
+    .sc:hover {
+      opacity: 1;
+    }
+
+    .aaa {
+      width: 50px;
+      height: 49px;
+    }
+
+    .add-he-head-img {
+      opacity: 0;
+      display: none;
+    }
+
+    .add-he-head-imga {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imgb {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imgc {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imgd {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imge {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imgf {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-head-imgg {
+      opacity: 0;
+      display: none;
+    }
+
+
+    .add-he-head-img-box {
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px dashed #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-he-expression-dialog {
+      opacity: 0;
+      display: none;
+    }
+
+    .add-he-expression-dialoga {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialogb {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialogc {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialogd {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialoge {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialogf {
+      opacity: 0;
+      display: none;
+    }
+    .add-he-expression-dialogg {
+      opacity: 0;
+      display: none;
+    }
+
+
+
+
+
+    .add-he-expression-dialog-box {
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px dashed #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-self-head-img {
+      opacity: 0;
+      display: none;
+    }
+
+    .add-self-head-img-box {
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px dashed #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-self-expression-dialog {
+      opacity: 0;
+      display: none;
+    }
+
+    .add-self-expression-dialog-box {
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px dashed #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="bootstrap-3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!--  jquery-->
+  <script src="js/jquery.1.11.1.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149)">
+<div class="big-box">
+
+  <div class="wrapper">
+
+    <div class="bbx" id="xxb">
+
+      <div class="bh">
+        <img src="tutu/wx-sc/1.png" style="margin-top:173px;margin-left: 40px;">
+
+        <div class="dm"
+             style="position: absolute; display:inline-block;text-align: center;font-family:微软雅黑;font-size:48px;border:none;margin-top:164px;margin-left:55px; width:875px;height: 55px; background-color:transparent;"
+             contenteditable
+        >张三</div>
+        <img src="tutu/wx-sc/2.png" style="display: inline-block;position:absolute;margin-top:195px;left: 1000px;">
+      </div>
+      <!-- 微信盒子 -->
+      <div id="mydiva" class="huakuaia"
+           style="position: relative;display: inline-block;background-color: rgb(237,237,237);height: 1902px;width: 1125px;border-bottom: 1px solid rgb(210,210,210);margin-bottom: -5px;flex-direction: column;">
+        <div class="box">
+
+        </div>
+      </div>
+      <div style="background-color:rgb(247,247,247);height: 270px;width: 1125px;border-top:1px solid rgb(210,210,210);">
+        <img src="tutu/wx-sc/P1.png">
+      </div>
+    </div>
+  </div>
+
+  <!-- 侧边 功能区 -->
+  <div class="function-box">
+
+    <!-- 对话框 -->
+    <div style="height: 850px;border: 3px solid black;margin-bottom: 30px;padding-bottom: 50px;" class="function-item">
+
+      <div class="ziji" style="margin-left: 25px;margin-bottom: 20px; margin-top: 20px; width: 650px;height: 780px;border: 1px solid black">
+        <div style="text-align: center; font-size: 50px;width: 635px; background-color: #FFFFFF;border-bottom: 1px solid black;">自己</div>
+          <label style="margin-left: 70px; font-size: 50px;width: 200px;">
+            添加头像
+            <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-self-head-img" accept="image/*">
+            <span class="add-self-head-img-box">+</span>
+          </label>
+          <label style="margin-left:350px;margin-top:-285px;font-size: 50px;width: 200px;">
+            添加图片
+            <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-self-expression-dialog" accept="image/*">
+            <span class="add-self-expression-dialog-box">+</span>
+          </label>
+
+          <div id="ziji" class="duihua" style="border:1px solid black; margin-top: 10px; height: 80px; width: 250px; margin-bottom:20px; padding-left:20px; border-radius:10px; margin-left:5px; font-size: 47px;"
+                  >添加对话
+          </div>
+
+
+        <div id="zijiysy" class="ysy"
+                style="border:1px solid black; margin-bottom:20px; padding-left: 20px; height: 80px; width: 250px; margin-top: -100px; border-radius:10px;margin-left:280px; font-size: 47px;"
+                >语音消息
+        </div>
+
+
+          <div id="zijisy" class="sy"
+                  style="border:1px solid black; margin-bottom:20px;padding-left: 20px; height: 80px; width: 250px; border-radius:10px;margin-left:5px; font-size: 47px;"
+                  >视频通话
+          </div>
+
+
+        <div id="zijiyy" class="yy"
+                style="border:1px solid black; margin-bottom:20px; padding-left: 20px; height: 80px; width: 250px; margin-top: -100px; border-radius:10px;margin-left:280px; font-size: 47px;"
+                >语音通话
+        </div>
+
+
+        <div id="zijiyhb" class="yhb"
+                style="border:1px solid black; margin-bottom:20px;padding-left: 20px; height: 80px; width: 250px; border-radius:10px;margin-left:5px; font-size: 47px;"
+                >微信红包
+        </div>
+
+
+        <div id="zijiyhs" class="yhs"
+                style="border:1px solid black; margin-bottom:20px;padding-left: 20px; height: 80px; width: 330px; border-radius:10px; margin-top: -100px; margin-left:280px; font-size: 47px;"
+                >微信红包收款
+        </div>
+
+
+        <div id="zijiyzz" class="yzz"
+                style="border:1px solid black; margin-bottom:20px; padding-left: 20px; height: 80px; width: 250px; border-radius:10px; margin-left:5px; font-size: 47px;"
+                >微信转账
+        </div>
+
+
+        <div id="zijiyzzs" class="yzzs"
+                style="border:1px solid black; margin-bottom:20px; padding-left: 20px; height: 80px; width: 330px; border-radius:10px; margin-top: -100px; margin-left:280px; font-size: 47px;"
+                >微信转账收款
+        </div>
+
+
+        <div id="zijiyth" class="yth"
+                style="border:1px solid black; margin-bottom:20px; padding-left: 20px; height: 80px; width: 330px; border-radius:10px;margin-left:5px; font-size: 47px;"
+                >微信转账退还
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="yonghuyi" style="margin-left: 710px;margin-top: -800px; width: 650px;height: 780px;border: 1px solid black">
+        <div style="text-align: center; font-size: 50px;width: 635px; background-color: #FFFFFF;border-bottom: 1px solid black;">用户一</div>
+
+        <label style="margin-top: 20px; margin-left: 70px; font-size: 50px;width: 200px;">
+          添加头像
+          <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-he-head-img" accept="image/*">
+          <span class="add-he-head-img-box">+</span>
+        </label>
+        <label style="margin-left:350px;margin-top:-285px;font-size: 50px;width: 200px;">
+          添加图片
+          <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-he-expression-dialog" accept="image/*">
+          <span class="add-he-expression-dialog-box">+</span>
+        </label>
+
+        <div id="yonghuyi" class="duihuayi" style="border:1px solid black;margin-top: 15px;height: 80px;width: 250px; margin-bottom:20px;padding-left:20px;border-radius:10px;margin-left:5px; font-size: 47px;"
+        >添加对话
+        </div>
+
+        <div id="yonghuyiy" class="zby"
+                style="border: 1px solid black; margin-top:-100px;margin-bottom: 20px; padding-left:20px;border-radius:10px;margin-left:280px;height: 80px;width: 340px; font-size: 47px;"
+                >语音消息-已读
+        </div>
+
+        <div id="yonghuyisz" class="sz"
+              style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+              >视频通话
+        </div>
+
+        <div id="yonghuyiyw" class="zbw"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:20px;margin-top: -100px; height: 80px;width: 340px;border-radius:10px;margin-left:280px; font-size: 47px;"
+                >语音消息-未读
+        </div>
+
+        <div id="yonghuyiyy" class="yy"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+                >语音通话
+        </div>
+
+        <div id="yongzhb" class="zhb"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px; border-radius:10px;margin-left:5px; font-size: 47px;"
+                >微信红包
+        </div>
+
+        <div id="yongzhs" class="zhs"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 340px;margin-top: -100px; border-radius:10px;margin-left:280px; font-size: 47px;"
+                >微信红包收款
+        </div>
+
+        <div id="yonghuyizz" class="zbz"
+                style= "border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+                >微信转账
+        </div>
+
+        <div id="yongzbs" class="zbs"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 340px; margin-left: 280px;margin-top: -100px; border-radius:10px; font-size: 47px;"
+        >微信转账收款
+        </div>
+
+        <div id="yongzth" class="zth"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:10px;height: 80px;width: 300px; border-radius:10px;margin-left:5px; font-size: 46px;"
+                >微信转账退还
+        </div>
+
+        <div id="yongzgq" class="zgq"
+                style="border: 1px solid black; margin-bottom:20px;padding-left:10px;height: 80px;width: 300px;margin-top: -100px; border-radius:10px;margin-left:320px; font-size: 46px;"
+                >微信转账过期
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="yonghuer" style="margin-left: 5px;margin-top: 150px; width: 650px;height: 780px;border: 1px solid black">
+        <div style="text-align: center; font-size: 50px;width: 635px; background-color: #FFFFFF;border-bottom: 1px solid black;">用户二</div>
+
+        <label style="margin-top: 20px; margin-left: 70px; font-size: 50px;width: 200px;">
+          添加头像
+          <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-he-head-imga" accept="image/*">
+          <span class="add-he-head-img-box">+</span>
+        </label>
+        <label style="margin-left:350px;margin-top:-285px;font-size: 50px;width: 200px;">
+          添加图片
+          <input style="font-size: 50px;width: 200px;height: 10px;" type="file" class="add-he-expression-dialoga" accept="image/*">
+          <span class="add-he-expression-dialog-box">+</span>
+        </label>
+
+        <div id="yonghuyia" class="duihuayia" style="border:1px solid black;margin-top: 15px;height: 80px;width: 250px; margin-bottom:20px;padding-left:20px;border-radius:10px;margin-left:5px; font-size: 47px;"
+        >添加对话
+        </div>
+
+        <div id="yonghuyiya" class="zbya"
+             style="border: 1px solid black; margin-top:-100px;margin-bottom: 20px; padding-left:20px;border-radius:10px;margin-left:280px;height: 80px;width: 340px; font-size: 47px;"
+        >语音消息-已读
+        </div>
+
+        <div id="yonghuyisza" class="sza"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+        >视频通话
+        </div>
+
+        <div id="yonghuyiywa" class="zbwa"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;margin-top: -100px; height: 80px;width: 340px;border-radius:10px;margin-left:280px; font-size: 47px;"
+        >语音消息-未读
+        </div>
+
+        <div id="yonghuyiyya" class="yya"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+        >语音通话
+        </div>
+
+        <div id="yongzhba" class="zhba"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px; border-radius:10px;margin-left:5px; font-size: 47px;"
+        >微信红包
+        </div>
+
+        <div id="yongzhsa" class="zhsa"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 340px;margin-top: -100px; border-radius:10px;margin-left:280px; font-size: 47px;"
+        >微信红包收款
+        </div>
+
+        <div id="yonghuyizza" class="zbza"
+             style= "border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 250px;border-radius:10px;margin-left:5px; font-size: 47px;"
+        >微信转账
+        </div>
+
+        <div id="yongzbsa" class="zbsa"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:20px;height: 80px;width: 340px; margin-left: 280px;margin-top: -100px; border-radius:10px; font-size: 47px;"
+        >微信转账收款
+        </div>
+
+        <div id="yongztha" class="ztha"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:10px;height: 80px;width: 300px; border-radius:10px;margin-left:5px; font-size: 46px;"
+        >微信转账退还
+        </div>
+
+        <div id="yongzgqa" class="zgqa"
+             style="border: 1px solid black; margin-bottom:20px;padding-left:10px;height: 80px;width: 300px;margin-top: -100px; border-radius:10px;margin-left:320px; font-size: 46px;"
+        >微信转账过期
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <div style="height: 300px;width: 1405px;border: 1px solid black;">
+      <div style="width: 1400px; text-align: center; font-size: 50px;">
+        其它消息
+      </div>
+      <div>
+
+        <div id="qtyi" class="hlx"
+                style="border: 1px solid black;height: 80px; width: 400px; margin-bottom:20px;padding:5px 5px 5px 5px;border-radius:10px;margin-left:20px; font-size: 47px;"
+                >微信红包收款提示
+        </div>
+
+        <div id="qter" class="sj"
+                style="border: 1px solid black;height: 80px; width: 245px; margin-bottom:20px;padding-left: 20px;margin-top: -100px; border-radius:10px;margin-left:450px; font-size: 47px;"
+                >添加时间
+        </div>
+
+        <div id="qtsan" class="qt"
+                style="border: 1px solid black;height: 80px; width: 330px;margin-bottom:20px;padding-left: 20px;margin-top: -100px; border-radius:10px;margin-left:725px; font-size: 47px;"
+                >添加其他消息
+        </div>
+
+        <div id="qtsi" class="wpt"
+                style="border: 1px solid black;height: 80px; width: 290px;margin-bottom:20px;padding-left: 20px;margin-top: -100px; border-radius:10px;margin-left:1085px; font-size: 47px;"
+                >我拍了拍他
+        </div>
+
+        <div id="qtwu" class="tpw"
+                style="border: 1px solid black;height: 80px; width: 290px;margin-bottom:20px;padding-left: 20px;border-radius:10px;margin-left:20px; font-size: 47px;"
+                >他拍了拍我
+        </div>
+
+        <div id="qtliu" class="wch"
+                style="border: 1px solid black;height: 80px; width: 290px;margin-bottom:20px;padding-left: 20px;margin-top: -100px; border-radius:10px;margin-left:330px; font-size: 47px;"
+                >我撤回消息
+        </div>
+
+        <div id="qtqi" class="tch"
+                style="border: 1px solid black;height: 80px; width: 290px;margin-bottom:20px;padding-left: 20px;margin-top: -100px;border-radius:10px;margin-left:640px; font-size: 50px;"
+                >他撤回消息
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 在光标处插入表情 -->
+    <div class="function-item">
+      <p style="margin-left: 350px; font-size: 50px;">点击表情即可在光标处插入表情</p>
+      <div class="emoji-box"></div>
+    </div>
+
+    <hr>
+
+    <!-- 插入重点文字 -->
+    <div class="function-item">
+      <label style="font-size: 50px;margin-left: 50px;">
+        文字 :<input style="font-size: 50px;" type="text" placeholder="点击编辑需要变色文字内容" class="key-words"
+                   style="height: 50px;font-size: 50px;">
+      </label>
+      <label style="font-size: 50px;margin-left: 50px;">
+        颜色： <input style="font-size: 50px;width: 400px;height: 80px;" type="color" class="key-color"
+                   value="#5B6B92">
+      </label>
+
+      <div style="margin-left: 700px;margin-top: -200px;">
+        <label style="font-size: 50px;margin-left: 300px;">
+          有下划线
+          <input style="font-size: 50px;height: 45px;width: 45px;" type="radio" name="drone" class="key-checkbox"
+                 value="underline">
+        </label>
+        <label style="font-size: 50px;margin-left: 300px;margin-bottom: 10px;">
+          无下划线
+          <input style="font-size: 50px;height: 45px;width: 45px;" type="radio" name="drone" class="key-checkbox"
+                 value="none" checked>
+        </label>
+      </div>
+      <button style="margin-top: 50px; color: white;margin-bottom:10px;padding:5px 5px 5px 5px;font-weight:550;background-color: #333333;border-radius:10px;margin-left:450px; font-size: 50px;"
+              type="button" class="key-button">在光标处插入文字
+      </button>
+    </div>
+    <hr>
+
+
+
+    <!-- 导出 -->
+    <div class="function-item">
+      <button style="font-size: 50px;margin-left: 550px;" class="send-btn" id="import"> 导 出 内 容 </button>
+    </div>
+
+    <!-- 导入 -->
+    <div class="function-item" style="font-size: 50px;margin-left: 220px;">导入文件（只能导入此界面导出的html文件）
+      <input style="font-size: 50px" type="file" name="导入文件" id="export">
+    </div>
+    <!--  左侧信息-->
+    <div class="left-box">
+      <!--    表格-->
+      <table class="table table-hover table-bordered my-table">
+        <thead>
+        <tr>
+          <th style="">操作</th>
+          <th>类型</th>
+          <th>发送者</th>
+          <th>发送内容</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="tr" id="noneTr" style="display: none">
+          <td>操作</td>
+          <td>系统提示</td>
+          <td>[用户一]</td>
+          <td>今天星期一</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div style="position: absolute;left: 2588px; width: 743px;height: 2436px;background-color: rgb(22,23,30)">
+
+  </div>
+
+</div>
+
+<!-- 引入 emoji -->
+<script src="emoji.js"></script>
+<!-- 引入 html2canvas -->
+<script src="html2canvas.js"></script>
+<!-- 引入自行封装的截图插件 -->
+<script src="screen-shot.js"></script>
+
+
+<script>
+  function handleSelectChange() {
+    let pid = document.querySelector("#pd");
+    let item = pid.options[pid.selectedIndex];
+    let cs = document.querySelector(".key-color");
+
+    cs.value = item.value // 更改颜色
+  }
+</script>
+
+<script>
+
+  // 保存数据
+  function saveHtml() {
+    // 利用indexDB数据库
+    const req = window.indexedDB.open('db', 1)
+    req.onsuccess = function (event) {
+      let db = event.target.result
+      let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+        id: 1,
+        html: document.querySelector('.box').innerHTML
+      })
+    }
+  }
+
+  // 监听页面加载事件加载数据库
+  window.onload = function () {
+    // 利用indexDB数据库
+    const req = window.indexedDB.open('db', 1) // 打开/创建数据库
+    req.onsuccess = function (event) { // 监听数据库创建成功事件
+      let db = event.target.result // 数据库对象
+      let transaction = db.transaction("info") // 事务
+      let objectStore = transaction.objectStore("info") // 仓库对象
+      let request = objectStore.get(1)
+      request.onsuccess = function () {
+        let item = request.result
+        if (item == null || item == undefined || item == "") {
+          let data = {id: 1, html: ""}
+          // 新增值
+          let request1 = db.transaction("info", 'readwrite').objectStore("info").add(data)
+          request1.onsuccess = function (event) {
+            console.log('数据写入成功')
+          }
+          request1.onerror = function (event) {
+            console.log('数据写入失败')
+            throw new Error(event.target.error)
+          }
+        } else {
+          document.querySelector('.box').innerHTML = item.html
+        }
+      }
+      request.onerror = function (event) {
+        console.log('读取失败')
+      }
+
+      // 获取左侧记录
+      let request2 = objectStore.get(2)
+      request2.onsuccess = function () {
+        let item = request2.result
+        if (item == null || item == undefined || item == "") {
+          let data = {id: 2, html: ""}
+          // 新增值
+          let request3 = db.transaction("info", 'readwrite').objectStore("info").add(data)
+          request3.onsuccess = function (event) {
+            console.log('数据写入成功')
+          }
+          request3.onerror = function (event) {
+            console.log('数据写入失败')
+            throw new Error(event.target.error)
+          }
+        } else {
+          document.querySelector('.left-box').innerHTML = item.html
+        }
+      }
+      request2.onerror = function (event) {
+        console.log('读取失败')
+      }
+
+    }
+    req.onerror = function (error) {
+      console.log('数据库打开报错')
+    }
+    req.onupgradeneeded = function (event) {
+      // 数据库创建或升级的时候会触发
+      db = event.target.result
+      let storeName = 'info' // 表名
+      if (!db.objectStoreNames.contains(storeName)) { // 判断表是否存在
+        // 创建表
+        db.createObjectStore(storeName, {keyPath: 'id', autoIncrement: true})
+      }
+    }
+  }
+
+  let leftHead = null
+
+  let leftHeada = null
+  let leftHeadb = null
+  let leftHeadc = null
+  let leftHeadd = null
+  let leftHeade = null
+  let leftHeadf = null
+  let leftHeadg = null
+
+
+
+  let rightHead = null
+
+
+  function test(test) {
+    test.parentNode.parentNode.removeChild(test.parentNode);
+  }
+  let box = document.querySelector('.box')
+
+
+
+
+
+
+  let addHeDialog = document.querySelector('#yonghuyi')
+
+  addHeDialog.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("duihuayi") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML ="<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'left-text-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZby = document.querySelector('#yonghuyiy')
+
+  // 添加左边语音消息
+  addZby.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zby") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className='you-san-j'
+    dialogDiv.className = 'left-zby-input'
+    dialogDiv.innerText = '5"'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+
+
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZbw = document.querySelector('#yonghuyiyw')
+
+  // 添加左边语音消息-未读
+  addZbw.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zbw") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img  class='zuo' src=tutu/wx-sc/4.png style='position:absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let zyDiv = document.createElement('div')
+    zyDiv.innerHTML = "<div contenteditable style='font-family: 字体子系; display: inline-block;' class='left-ysys-input' value='5“' type=\"text\" onkeydown=\"this.onkeyup();\" onkeyup=\"this.size=(this.value.length>1?this.value.length:1);\" size=\"1\">5”</div>" +
+            "<img src=tutu/wx-sc/25.png style='margin-top: -10px;margin-left: 30px;'>"
+    //
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(zyDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addSz = document.querySelector('#yonghuyisz')
+
+  //添加对方视频通话
+  addSz.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("sz") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className='you-san-j'
+    dialogDiv.className = 'sz-ys'
+    dialogDiv.innerText = '聊天时长03:00'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addYz = document.querySelector('#yonghuyiyy')
+
+  //添加对方语音通话
+  addYz.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yy") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'yz-ys'
+    dialogDiv.innerText = '聊天时长03:05'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZhb = document.querySelector('#yongzhb')
+
+  // 添加左边红包
+  addZhb.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zhb") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/6.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 90px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZhs = document.querySelector('#yongzhs')
+  // 添加左边红包收款
+  addZhs.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zhs") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/16.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 63px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 35px;margin-top: 115px;'value=''>已领取</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+  let addZbz = document.querySelector('#yonghuyizz')
+
+  // 添加左边转账
+  addZbz.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zbz") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item tttt'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/8.png' style='margin-top:25px;position: relative;margin-left: px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>你发起了一笔转账</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZbs = document.querySelector('#yongzbs')
+
+  //添加左边转账收款
+  addZbs.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zbs") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/17.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已收款</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  // 添加左边转账退还
+  let addZth = document.querySelector('#yongzth')
+
+  // 添加左边转账退回
+  addZth.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zth") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/12.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已被退还</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  // 添加左边转账过期
+  let addZgq = document.querySelector('#yongzgq')
+
+  // 添加左边转账过期
+  addZgq.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zgq") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/13.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已过期</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let addHeDialoga = document.querySelector('#yonghuyia')
+
+  addHeDialoga.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("duihuayia") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML ="<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'left-text-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZbya = document.querySelector('#yonghuyiya')
+
+  // 添加左边语音消息
+  addZbya.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zbya") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className='you-san-j'
+    dialogDiv.className = 'left-zby-input'
+    dialogDiv.innerText = '5"'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+
+
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZbwa = document.querySelector('#yonghuyiywa')
+
+  // 添加左边语音消息-未读
+  addZbwa.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zbwa") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img  class='zuo' src=tutu/wx-sc/4.png style='position:absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let zyDiv = document.createElement('div')
+    zyDiv.innerHTML = "<div contenteditable style='font-family: 字体子系; display: inline-block;' class='left-ysys-input' value='5“' type=\"text\" onkeydown=\"this.onkeyup();\" onkeyup=\"this.size=(this.value.length>1?this.value.length:1);\" size=\"1\">5”</div>" +
+            "<img src=tutu/wx-sc/25.png style='margin-top: -10px;margin-left: 30px;'>"
+    //
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(zyDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addSza = document.querySelector('#yonghuyisza')
+
+  //添加对方视频通话
+  addSza.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("sza") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className='you-san-j'
+    dialogDiv.className = 'sz-ys'
+    dialogDiv.innerText = '聊天时长03:00'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addYza = document.querySelector('#yonghuyiyya')
+
+  //添加对方语音通话
+  addYza.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yya") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/4.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'yz-ys'
+    dialogDiv.innerText = '聊天时长03:05'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZhba = document.querySelector('#yongzhba')
+
+  // 添加左边红包
+  addZhba.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zhba") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/6.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 90px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+  let addZhsa = document.querySelector('#yongzhsa')
+  // 添加左边红包收款
+  addZhsa.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("zhsa") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-imga'
+    // 2.1 判断是否已经上传头像
+    if (leftHeada !== null) {
+      headDiv.style.backgroundImage = `url(${leftHeada})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/16.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 63px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 35px;margin-top: 115px;'value=''>已领取</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let addHeHeadImg = document.querySelector('.add-he-head-img')
+
+  addHeHeadImg.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+
+    reader.onloadend = function (e) {
+      localStorage.setItem("avatar", e.target.result)
+      let headImg = document.querySelectorAll('.left-head-img')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${e.target.result})`
+      })
+      // 暴露变量给全局
+      leftHead = e.target.result
+
+      // 保存值(延时保存,防止appendChild还没成功就保存了)
+      setTimeout(() => {
+        saveHtml()
+      }, 100)
+    };
+
+    // 保存值(延时保存,防止appendChild还没成功就保存了)
+    setTimeout(() => {
+      saveHtml()
+    }, 100)
+  })
+
+
+  let addHeHeadImga = document.querySelector('.add-he-head-imga')
+
+  addHeHeadImga.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+
+    reader.onloadend = function (e) {
+      localStorage.setItem("avatar", e.target.result)
+      let headImg = document.querySelectorAll('.left-head-imga')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${e.target.result})`
+      })
+      // 暴露变量给全局
+      leftHeada = e.target.result
+
+      // 保存值(延时保存,防止appendChild还没成功就保存了)
+      setTimeout(() => {
+        saveHtml()
+      }, 100)
+    };
+
+    // 保存值(延时保存,防止appendChild还没成功就保存了)
+    setTimeout(() => {
+      saveHtml()
+    }, 100)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 获取添加自己头像
+  let addSelfHeadImg = document.querySelector('.add-self-head-img')
+
+  //添加自己头像
+  addSelfHeadImg.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      localStorage.setItem("avata", e.target.result)
+      let headImg = document.querySelectorAll('.right-head-img,.right-yz-img')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${e.target.result})`
+      })
+      // 暴露变量给全局
+      rightHead = e.target.result
+
+      // 保存值(延时保存,防止appendChild还没成功就保存了)
+      setTimeout(() => {
+        saveHtml()
+      }, 100)
+    };
+
+    // 保存值(延时保存,防止appendChild还没成功就保存了)
+    setTimeout(() => {
+      saveHtml()
+    }, 100)
+  })
+
+
+
+
+
+
+
+
+
+  let addSelfDialog = document.querySelector('#ziji')
+
+  // 添加自己对话框
+  addSelfDialog.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("duihua") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/3.png' style='position: absolute;margin-left: 944px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-text-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //添加右视频通话
+  let addSy = document.querySelector('#zijisy')
+
+  //添加我方视频通话
+  addSy.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("sy") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/3.png' style='position: absolute;margin-left: 944px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'sy-ys'
+    dialogDiv.innerText = '聊天时长03:55'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+  // 添加右边语音
+  let addYsy = document.querySelector('#zijiysy')
+
+  // 右边语音消息
+  addYsy.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("ysy") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/3.png' style='position: absolute;margin-left: 944px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-ysy-input'
+    dialogDiv.innerText = '5"'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+  //添加右语音通话
+  let addYy = document.querySelector('#zijiyy')
+
+  //添加我方语音通话
+  addYy.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yy") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/3.png' style='position: absolute;margin-left: 944px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'yy-ys'
+    dialogDiv.innerText = '聊天时长05:57'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+  let addYzz = document.querySelector('#zijiyzz')
+
+  //添加我方微信转账
+  addYzz.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yzz") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = ''
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/9.png' style='margin-top:25px;position: relative;margin-left: 321px;width: 637px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>你发起了一笔转账</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+  // 添加右边红包
+  let addYhb = document.querySelector('#zijiyhb')
+
+  //添加我方微信红包
+  addYhb.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.tabindex = 1
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/14.png' style='margin-top:25px;position: relative;margin-left: 321px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 40px;margin-top: 85px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 215px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+  // 添加右边红包收款
+  let addYhs = document.querySelector('#zijiyhs')
+
+  // 添加右边红包收款
+  addYhs.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yhs") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/15.png' style='margin-top:25px;position: relative;margin-left: 321px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 40px;margin-top: 65px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style=' display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 35px;margin-top: 115px;'value=''>已领取</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,251,255);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 205px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+  // 添加右边转账收款
+  let addYzzs = document.querySelector('#zijiyzzs')
+
+  //添加我方转账收款
+  addYzzs.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yzzs") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = ''
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/18.png' style='margin-top:25px;position: relative;margin-left: 321px;width: 637px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>已收款</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,249);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+  // 添加右边转账过期
+  let addYth = document.querySelector('#zijiyth')
+
+  // 我方转账退回
+  addYth.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("yth") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = ''
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/19.png' style='margin-top:25px;position: relative;margin-left: 321px;'>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-485px;font-size: 40px;margin-top: 95px;'value='已退还'>已退还</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,249,243);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value='微信转账'>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+  // 添加红包领取消息
+  let addHlx = document.querySelector('#qtyi')
+
+  // 添加红包领取消息
+  addHlx.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("hlx") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:10px;margin-left: 730px;' type='button' onclick='test(this)' value='删除'/>"
+
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-hlx-input'
+    dialogDiv.innerHTML = "<div contenteditable style='display: inline-block;'>XXX领取了你的<div style='display: inline-block; color: rgb(253,152,20)'>红包</div></div>"
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+  // 添加时间
+  let addSj = document.querySelector('#qter')
+
+  // 添加时间
+  addSj.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("sj") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 580px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-sj-input'
+    dialogDiv.innerText = '13:00'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+  // 添加其他信息
+  let addQt = document.querySelector('#qtsan')
+
+  // 添加其他消息
+  addQt.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("qt") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 620px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+  // 添加拍一拍
+  let addWp = document.querySelector('#qtsi')
+
+  // 拍一拍
+  addWp.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("wpt") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+// 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '我拍了拍“张三”'
+    dialogDiv.setAttribute('contenteditable', true)
+// 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+// 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+  // 添加拍一拍
+  let addTp = document.querySelector('#qtwu')
+
+  // 拍一拍
+  addTp.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("tpw") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+// 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-pyp-input'
+    dialogDiv.innerText = '“张三”拍了拍我'
+    dialogDiv.setAttribute('contenteditable', true)
+// 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+// 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+  // 添加我撤回消息
+  let addWch = document.querySelector('#qtliu')
+
+  // 我撤回
+  addWch.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("wch") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left:700px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '你撤回了一条消息'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let addTch = document.querySelector('#qtqi')
+
+  // 他撤回
+  addTch.addEventListener('click', (e) => {
+
+    if (e.target.className.indexOf("tch") == -1) {
+      return;
+    }
+
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    var curId = Date.now()
+    itemDiv.id = curId
+    sessionStorage.setItem("curId", curId)
+    itemDiv.className = 'dialog-item'
+    itemDiv.tabindex = 1
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '“张三”撤回了一条消息'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    var id = sessionStorage.getItem("id");
+    var flag = sessionStorage.getItem("leftOrRight");
+    console.log(id)
+    if (id == null || id == undefined || id == "") {
+      // 5. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+    } else {
+      if (flag == 0) {
+        $("#" + id).before($(itemDiv))
+      } else {
+        $("#" + id).after($(itemDiv))
+      }
+    }
+    setTimeout(() => {
+      // 添加到表格
+      saveTable();
+      saveHtml()
+    }, 50)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let addHeExpressionDialog = document.querySelector('.add-he-expression-dialog')
+
+  addHeExpressionDialog.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      // 1. 创建一条数据
+      let itemDiv = document.createElement('div')
+      var curId = Date.now()
+      sessionStorage.setItem("curId", curId)
+      itemDiv.id = curId
+      // 为了实现 div 失去焦点事件
+      itemDiv.setAttribute("tabindex", "1")
+      itemDiv.className = 'dialog-item tttt'
+      itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+      // 2. 创建头像
+      let headDiv = document.createElement('div')
+      headDiv.className = 'left-head-img'
+      // 2.1 判断是否已经上传头像
+      if (leftHead !== null) {
+        headDiv.style.backgroundImage = `url(${leftHead})`
+      }
+      // 3. 创建存放自定义表情的 img
+      let dialogImg = document.createElement('img')
+      dialogImg.src = e.target.result
+
+      dialogImg.className = 'left-custom-emoji'
+      // 5. 把头像和对话框添加到单条数据中
+      itemDiv.appendChild(headDiv)
+      itemDiv.appendChild(dialogImg)
+      // 6. 把单条数据添加到盒子中
+
+      // TODO
+      var id = sessionStorage.getItem("id");
+      var flag = sessionStorage.getItem("leftOrRight");
+      console.log(id)
+      if (id == null || id == undefined || id == "") {
+        // 5. 把单条数据添加到盒子中
+        box.appendChild(itemDiv)
+      } else {
+        if (flag == 0) {
+          $("#" + id).before($(itemDiv))
+        } else {
+          $("#" + id).after($(itemDiv))
+        }
+      }
+
+      // 添加到表格
+      setTimeout(() => {
+        saveTable();
+      }, 100)
+
+      setTimeout(() => {
+        saveHtml()
+      }, 100)
+
+      // 7. 清空添加表情的 input 框中的文件
+      // addSelfExpressionDialog.value = ''
+      // 8.添加重新上传事件
+      dialogImg.addEventListener('click', function () {
+        // 1. 创建上传 input
+        let input = document.createElement('input')
+        input.type = "file"
+        input.click()
+        input.addEventListener('change', function () {
+          let blob = this.files[0]
+          // //创建文件读取对象
+          let reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = function (towEvent) {
+            dialogImg.src = towEvent.target.result
+          }
+          saveHtml()
+        })
+      })
+
+    };
+  })
+
+
+
+
+
+
+
+
+
+  // 获取添加自己表情的上传框
+  let addSelfExpressionDialog = document.querySelector('.add-self-expression-dialog')
+
+  // 添加自己表情
+  addSelfExpressionDialog.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      // 1. 创建一条数据
+      let itemDiv = document.createElement('div')
+      var curId = Date.now()
+      sessionStorage.setItem("curId", curId)
+      itemDiv.id = curId
+      // 为了实现 div 失去焦点事件
+      itemDiv.setAttribute("tabindex", "1")
+      itemDiv.className = 'dialog-item'
+      itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+      // 2. 创建头像
+      let headDiv = document.createElement('div')
+      headDiv.className = 'right-head-img'
+      // 2.1 判断是否已经上传头像
+      if (rightHead !== null) {
+        headDiv.style.backgroundImage = `url(${rightHead})`
+      }
+      // 3. 创建存放自定义表情的 img
+      let dialogImg = document.createElement('img')
+      dialogImg.src = e.target.result
+
+      dialogImg.className = 'right-custom-emoji'
+      // 5. 把头像和对话框添加到单条数据中
+      itemDiv.appendChild(dialogImg)
+      itemDiv.appendChild(headDiv)
+      // 6. 把单条数据添加到盒子中
+
+      // TODO
+      var id = sessionStorage.getItem("id");
+      var flag = sessionStorage.getItem("leftOrRight");
+      console.log(id)
+      if (id == null || id == undefined || id == "") {
+        // 5. 把单条数据添加到盒子中
+        box.appendChild(itemDiv)
+      } else {
+        if (flag == 0) {
+          $("#" + id).before($(itemDiv))
+        } else {
+          $("#" + id).after($(itemDiv))
+        }
+      }
+
+      // 添加到表格
+      setTimeout(() => {
+        saveTable();
+      }, 100)
+
+      setTimeout(() => {
+        saveHtml()
+      }, 100)
+
+      // 7. 清空添加表情的 input 框中的文件
+      // 8.添加重新上传事件
+      dialogImg.addEventListener('click', function () {
+        // 1. 创建上传 input
+        let input = document.createElement('input')
+        input.type = "file"
+        input.click()
+        input.addEventListener('change', function () {
+          let blob = this.files[0]
+          // //创建文件读取对象
+          let reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = function (towEvent) {
+            dialogImg.src = towEvent.target.result
+          }
+          saveHtml()
+        })
+      })
+
+    };
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let emojiBox = document.querySelector('.emoji-box')
+
+  emoji.forEach(item => {
+    let oImg = document.createElement('img')
+    oImg.src = item.src
+    oImg.alt = item.alt
+    oImg.style.width = "110px"
+    oImg.style.height = "110px"
+    oImg.style.margin = '5px'
+    oImg.style.userSelect = 'none'
+    emojiBox.appendChild(oImg)
+
+    // 添加插入表情的点击事件
+    oImg.addEventListener('click', function (e) {
+      insertImg(item.src)
+    })
+  })
+
+
+  /**
+   * 在光标处插入图片
+   * @param src 路径
+   */
+  function insertImg(src) {
+    if (window.getSelection) {
+      let sel = window.getSelection();
+      let range = sel.getRangeAt(0);
+
+      if ((range.commonAncestorContainer.className == undefined || range.commonAncestorContainer.className.indexOf("left-text-input") != -1)
+          || (range.endContainer.className == undefined || range.endContainer.className.indexOf("left-text-input") != -1)
+          || (range.startContainer.className == undefined || range.startContainer.className.indexOf("left-text-input") != -1)) {
+
+      } else {
+        return
+      }
+
+      let img = new Image();
+      range.deleteContents()
+      img.src = src;
+      range.insertNode(img);
+      range.collapse(false); //对于IE来说，参数不可省略
+
+
+      saveHtml()
+
+    }
+  }
+
+
+  let keyBtn = document.querySelector('.key-button')
+
+  keyBtn.addEventListener('click', () => {
+    // 获取 文字
+    let keyWords = document.querySelector('.key-words')
+    // 获取 颜色
+    let keyColor = document.querySelector('.key-color')
+    // 获取 下划线
+    let keyCheckbox = document.querySelector('.key-checkbox:checked')
+
+    // 插入文字
+    insertSpan({
+      text: keyWords.value,
+      color: keyColor.value,
+      underline: keyCheckbox.value
+    })
+
+    saveHtml()
+  })
+
+  /**
+   * 在光标处插入元素
+   * @param text 文字内容
+   * @param color 文字颜色
+   * @param underline 是否带有下划线
+   */
+  function insertSpan({text, color, underline}) {
+    if (window.getSelection) {
+      let sel = window.getSelection();
+      let range = sel.getRangeAt(0);
+      // 创建元素
+      let oSpan = document.createElement('span')
+      range.deleteContents()
+      oSpan.innerText = text
+      oSpan.style.color = color
+      oSpan.style.textDecoration = underline
+      // 整块选中/删除
+      oSpan.setAttribute('contenteditable', false)
+      range.insertNode(oSpan);
+      range.collapse(false); //对于IE来说，参数不可省略
+
+      saveHtml()
+
+    }
+  }
+
+  // 点击选择插入上下
+  function clickTr(e) {
+    if (e.className.indexOf("select") == -1) {
+      return
+    }
+    var flag = 0
+    if (confirm("点击确认则插入到该条记录上面,点击取消则插入到该条记录下面")) {
+      flag = 0
+    } else {
+      flag = 1
+    }
+    // 获取id
+    let id = e.getAttribute("data-id")
+    sessionStorage.setItem("id", id)
+    sessionStorage.setItem("leftOrRight", flag)
+  }
+
+  // 点击删除
+  function deleteTr(e) {
+    if (e.className.indexOf("delete") == -1) {
+      return
+    }
+    // 获取id
+    let id = e.getAttribute("data-id")
+    // 删除右边表格
+    $("." + id).remove()
+    // 删除左边数据
+    $("#" + id).remove()
+
+    // 保存记录
+    setTimeout(() => {
+      saveHtml()
+    }, 50)
+
+    setTimeout(() => {
+      // 利用indexDB数据库
+      const req = window.indexedDB.open('db', 1)
+      req.onsuccess = function (event) {
+        let db = event.target.result
+        let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+          id: 2,
+          html: document.querySelector('.left-box').innerHTML
+        })
+      }
+    }, 50)
+  }
+
+  // 导出
+  $("#import").click(function () {
+    let html = document.querySelector('.box').innerHTML
+
+    html = "<div>" + html + "</div>"
+
+    let items = $("#noneTr").siblings()
+    let trs = ""
+    for (var i = 0; i < items.length; i++) {
+      let t = items[i]
+      let id = t.getAttribute("data-id")
+      let tr = '<tr class="' + t.className + '" data-id="' + id + '" onclick="clickTr(this)">' + t.innerHTML + '</tr>'
+      trs += tr
+    }
+    trs = "<div id='qwertyuiopasdfghjklzxcvbnm'>" + trs + "</div>"
+    html += trs
+    let blob = new Blob([html], {type: "text/html"});
+    const fileName = "聊天数据"
+    if ('download' in document.createElement('a')) { // 非IE下载
+      const elink = document.createElement('a')
+      elink.download = fileName
+      elink.style.display = 'none'
+      elink.href = URL.createObjectURL(blob)
+      document.body.appendChild(elink)
+      elink.click()
+      URL.revokeObjectURL(elink.href) // 释放URL 对象
+      document.body.removeChild(elink)
+    } else {
+      navigator.msSaveBlob(blob, fileName)
+    }
+
+  })
+
+
+  // 导入
+  $("#export").change(function (e) {
+    const files = e.target.files;
+    console.log(files)
+    if (window.FileReader) {
+      let items = $("#noneTr").siblings()
+
+      for (let i = 0; i < items.length; i++) {
+        items.remove()
+      }
+
+      let reader = new FileReader();
+      reader.readAsText(files[0]);
+      reader.onload = function () {
+        var data = reader.result
+        let index = data.indexOf("qwertyuiopasdfghjklzxcvbnm")
+        if (index != -1) {
+          let temp = data
+          index += "qwertyuiopasdfghjklzxcvbnm".length + 2
+          let teHtml = temp.substring(index, data.length - 6)
+          let lastArr = $(".tr")
+          let lastItem = lastArr[lastArr.length - 1]
+          $(lastItem).after($(teHtml))
+
+          setTimeout(() => {
+            // 移除所有 tr 的 点击事件
+            $("tr").unbind("click")
+          }, 50)
+        }
+        // let html = document.querySelector('.bbb').innerHTML
+        // html += $(data)[0].innerHTML
+        document.querySelector('.box').innerHTML = $(data)[0].innerHTML
+
+        setTimeout(() => {
+          // 解绑 tr 事件
+          $("tr").unbind("click")
+          saveHtml()
+        }, 50)
+
+        setTimeout(() => {
+          // 解绑 tr 事件
+          $("tr").unbind("click")
+          // 利用indexDB数据库
+          const req = window.indexedDB.open('db', 1)
+          req.onsuccess = function (event) {
+            let db = event.target.result
+            let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+              id: 2,
+              html: document.querySelector('.left-box').innerHTML
+            })
+          }
+        }, 50)
+
+      };
+      reader.onerror = function () {
+        console.log('读取失败');
+        console.log(reader.error);
+      }
+    } else {
+      console.log('你的浏览器不支持读取文件');
+    }
+  })
+
+
+
+
+  // 设置头像
+  function setAvatar() {
+    let avatar = localStorage.getItem("avatar")
+    if (avatar == undefined || avatar == null || avatar == "") {
+      console.log("没有设置头像")
+    } else {
+      let headImg = document.querySelectorAll('.left-head-img')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${avatar})`
+      })
+    }
+  }
+
+  // 设置头像
+  function setAvata() {
+    let avata = localStorage.getItem("avata")
+    if (avata == undefined || avata == null || avata == "") {
+      console.log("没有设置头像")
+    } else {
+      let headImga = document.querySelectorAll('.right-head-img,.right-yz-img')
+      headImga.forEach(item => {
+        item.style.backgroundImage = `url(${avata})`
+      })
+    }
+  }
+
+
+
+
+  // 定时器获取所有的 .bbb .left-text-input 监听它们的移入移出事件
+  setInterval(() => {
+
+    $(".box .left-text-input").on({
+      // 移入事件
+      mouseenter: function (e) {
+        let my = e.target
+        let parent = e.target.parentNode
+        // 获取 id
+        let tr = $("." + parent.id)[0].getElementsByTagName("td")[3]
+        let html = e.target.parentNode.getElementsByClassName("left-text-input")[0].innerHTML
+        console.log(html)
+        html = '<div class="left-text-input" contenteditable="false">' + html + '</div>';
+        tr.innerHTML = html
+
+        setTimeout(() => {
+          saveHtml()
+        }, 50)
+
+        setTimeout(() => {
+          // 利用indexDB数据库
+          const req = window.indexedDB.open('db', 1)
+          req.onsuccess = function (event) {
+            let db = event.target.result
+            let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+              id: 2,
+              html: document.querySelector('.left-box').innerHTML
+            })
+          }
+        }, 50)
+
+      },
+
+
+      // 移除事件
+      mouseleave: function (e) {
+        let my = e.target
+        let parent = e.target.parentNode
+        // 获取 id
+        let tr = $("." + parent.id)[0].getElementsByTagName("td")[3]
+        let html = e.target.parentNode.getElementsByClassName("left-text-input")[0].innerHTML
+        console.log(html)
+        html = '<div class="left-text-input" contenteditable="false">' + html + '</div>';
+        tr.innerHTML = html
+
+        setTimeout(() => {
+          saveHtml()
+        }, 50)
+
+        setTimeout(() => {
+          // 利用indexDB数据库
+          const req = window.indexedDB.open('db', 1)
+          req.onsuccess = function (event) {
+            let db = event.target.result
+            let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+              id: 2,
+              html: document.querySelector('.left-box').innerHTML
+            })
+          }
+        }, 50)
+      }
+    })
+
+
+  }, 1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function saveTable() {
+    var curId = sessionStorage.getItem("curId");
+    let item = $("#" + curId)[0]
+    console.log(curId)
+    if (item == null || item == undefined) {
+      alert("请选择要发送的内容")
+      return
+    }
+    let oldEle = item
+    item = item.cloneNode(true)
+    item.removeChild(item.childNodes[0])
+    item.className = "dialog-item"
+    item.removeChild(item.childNodes[0])
+    item.childNodes[0].setAttribute("contenteditable", "false")
+
+    // 判断最后一个是否被标记了
+    if (item.className.indexOf("last") != -1) {
+      alert("请选择要发送的内容")
+    } else {
+      // 如果没有选择,直接插入最后
+      let html = item.innerHTML.trim()
+      html = html.replace(/^\s+|\s+$/g, '')
+      let str = '<tr class="tr ' + item.id + '" data-id="' + item.id + '">\n' +
+          '        <td style="align-items: center;justify-content: center;height: 200px;width: 200px;">' +
+          '<button style="font-size: 45px;margin-bottom: 40px" type="button" class="btn btn-danger delete" data-id="' + item.id + '" onclick="deleteTr(this)">删除</button>' +
+          '<button style="font-size: 45px;" type="button" class="btn btn-info select" data-id="' + item.id + '" onclick="clickTr(this)">选择插入方向</button>\n</td>\n' +
+          '        <td style="margin-top: 0px;width: 300px;height: 200px;">' + html + '</td>\n' +
+          '      </tr>'
+      // 如果有选择
+      var id = sessionStorage.getItem("id");
+      if (id == null || id == undefined || id == "") {
+        // 未处理
+        let lastArr = $(".tr")
+        let lastItem = lastArr[lastArr.length - 1]
+        $(lastItem).after($(str))
+      } else {
+        // 如果有选择,需要插入到合适的地方
+        var flag = sessionStorage.getItem("leftOrRight");
+        if (flag == 0) {
+          $("." + id).before($(str))
+        } else {
+          $("." + id).after($(str))
+        }
+        sessionStorage.removeItem("id")
+        sessionStorage.removeItem("leftOrRight")
+      }
+    }
+
+    setTimeout(() => {
+      saveHtml()
+    }, 50)
+
+    setTimeout(() => {
+      // 利用indexDB数据库
+      const req = window.indexedDB.open('db', 1)
+      req.onsuccess = function (event) {
+        let db = event.target.result
+        let request1 = db.transaction("info", 'readwrite').objectStore("info").put({
+          id: 2,
+          html: document.querySelector('.left-box').innerHTML
+        })
+      }
+    }, 50)
+
+    // 设置头像
+    setAvatar()
+    setAvata()
+  }
+
+
+</script>
+
+</body>
+</html>
